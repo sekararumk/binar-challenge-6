@@ -70,19 +70,19 @@ const Login = () => {
                                 <form onSubmit={ handleSubmit(formSubmitHandler) } className={style.signin_form}>
                                     <div className="mb-4">
                                         <label htmlFor="email">Email</label>
-                                        <input type="email" name="email" id="email" class="form-control" placeholder="Contoh: johndee@gmail.com" {...register('user_email', {required: true})} autoComplete="true" />
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Contoh: johndee@gmail.com" {...register('user_email', {required: true})} autoComplete="true" data-testid="input-email"/>
                                         <p className={style.text_sm}>{formState.errors.user_email?.type === 'required' && "Email is required"}</p>
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="user_password">Password</label>
-                                        <input type="password" name="user_password" id="user_password" class="form-control" placeholder="6+ karakter" {...register('user_password',  {required: true})} autoComplete="true" />
+                                        <input type="password" name="user_password" id="user_password" class="form-control" placeholder="6+ karakter" {...register('user_password',  {required: true})} autoComplete="true" data-testid="input-password"/>
                                         <p className={style.text_sm}>{formState.errors.user_password?.type === 'required' && "Password is required"}</p>
                                     </div>
                                     <button type="submit" className={`${style['btn_primary']} btn mt-4`}>Sign In</button>
                                 </form>
-                                <p>Don't have an account? <Link to="/register" className={`${style['login_text']} mt-4`}>Register Now</Link></p>
+                                <p>Don't have an account? <Link to="/register" className={`${style['login_text']} mt-4`} data-testid="button">Register Now</Link></p>
                                 <GoogleLogin
-                                    clientId="636222421973-4c1o0n6l2o5aekt7tidmdnm06mdjo0qt.apps.googleusercontent.com"
+                                    clientId="547625838498-ipttddpf985fa7gksm8qsiie11295r48.apps.googleusercontent.com"
                                     buttonText="Login"
                                     onSuccess={googleSuccessLogin}
                                     onFailure={googleFailedLogin}

@@ -1,8 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const UserPage = () => {
+  const user = useSelector( store => store.user.data)
+
   return (
-    <div>Halaman User</div>
+    <>
+      <div>
+        <h2>Halaman User</h2>
+      </div>
+      <div>
+        { user !== null && <h3><Link to="/logout">Logout</Link></h3>}
+      </div>
+    </>
   )
 }
 

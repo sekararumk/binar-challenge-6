@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux"
 import ProtectedRoute from './Component/HOC/ProtectedRoute'
 import UnprotectedRoute from './Component/HOC/UnprotectedRoute'
 import Login from './Component/Page/Login'
-import Register from './Component/Page/Register/Register'
+import Register from './Component/Page/Register'
 import Home from './Component/Page/Home'
 import UserPage from './Component/Page/UserPage'
 import AdminPage from './Component/Page/AdminPage'
@@ -25,7 +25,6 @@ const App = () => {
       axios.get(`http://localhost:4000/users/${userData.sub}`)
       .then( res => {
         dispatch( userSlice.actions.addUser({ userData: res }))
-
       })
     } catch {}
     

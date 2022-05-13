@@ -6,8 +6,8 @@ import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={binarStore}>
-      <App />
-    </Provider>
+      <Provider store={binarStore}>
+          <App />
+      </Provider>
   </React.StrictMode>
 );

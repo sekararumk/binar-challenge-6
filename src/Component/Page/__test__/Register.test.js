@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import binarStore from './store/store'
+import binarStore from '../../../store/store'
 import Register from '../Register'
 
 test( 'render register' , () => {

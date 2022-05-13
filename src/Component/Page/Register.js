@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import jwtDecode from 'jwt-decode'
 import axios from 'axios'
-import userSlice from '../../../store/user'
+import userSlice from '../../store/user'
 import style from './Register.module.css'
 
 const Register = () => {
@@ -37,7 +37,11 @@ const Register = () => {
                 axios.get(`http://localhost:4000/users/${user.sub}`)
                 .then( res => {
                     dispatch( userSlice.actions.addUser({ userData: res.data }) )
-                    navigate('/login')
+                    if (res.data.isAdmin) {
+                        navigate("/admin-page");
+                    } else {
+                        navigate("/user-page");
+                    }
                 })
             }
         }).catch( err => {
